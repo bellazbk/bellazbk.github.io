@@ -1,0 +1,321 @@
+/* Reset básico */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-size: 100%;
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+body {
+   font-family: 'Edu AU VIC WA NT Hand', sans-serif;
+   line-height: 1.6;
+   background-color: #f4f4f4;
+   color: #333;
+   position: relative;
+}
+
+/* Header */
+header {
+   background: #333;
+   color: #fff;
+   text-align: center;
+   padding: 1rem;
+}
+
+/* INICIO */
+/* Estilo para o ícone de hambúrguer */
+.nav-toggle {
+   display: block;
+   font-size: 1.5rem;
+   cursor: pointer;
+   position: absolute;
+   top: 20px;
+   right: 50px;
+   color: #fff;
+}
+.nav-toggle i {
+   font-size: 1.8rem;
+   color: #fff;
+}
+/* Estilo para o ícone de fechar (X) */
+.nav-close {
+   display: none; /* Escondido por padrão */
+   font-size: 2rem;
+   color: #ff4747;
+   cursor: pointer;
+   position: absolute;
+   top: 6px;
+   right: 23px;
+   z-index: 1001; /* Garante que o ícone de fechar fique sobre o menu */
+   position: fixed; 
+}
+nav ul.active .nav-close {
+   display: block; /* Mostra o ícone de fechar quando o menu está ativo */
+}
+nav ul {
+   list-style: none;
+   display: none; /* Escondido por padrão */
+   flex-direction: column;
+   align-items: center;
+   background-color: rgba(74, 63, 53, 0.9);
+   position: fixed; 
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   padding: 2rem 0;
+   z-index: 1000;
+   transition: opacity 0.3s ease, transform 0.3s ease-in-out; /* Transição suave */
+   transform: translateY(-100%); /* Começa fora da tela */
+   opacity: 0; /* Inicialmente invisível */
+}
+nav ul.active {
+   display: flex; /* Exibe o menu quando ativo */
+   transform: translateY(0); /* Move o menu para dentro da tela */
+   opacity: 1; /* Torna o menu visível */
+}
+nav ul li {
+   margin: 1rem 0;
+}
+nav ul li a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 1.5rem;
+   font-family: 'Georgia', serif;
+}
+/* Hero */
+.hero {
+   margin-top: 50px;
+}
+.hero h1 {
+   font-size: 1.8rem;
+   margin-bottom: 0.5rem;
+}
+.hero p {
+   font-size: 1rem;
+}
+/* Botão Saiba Mais */
+.saiba-mais {
+   display: block;
+   margin: 1rem auto;
+   padding: 0.5rem 1rem;
+   background: #ff4747;
+   color: #fff;
+   text-decoration: none;
+   border-radius: 5px;
+   font-size: 1.2rem;
+}
+/* Ícones Sociais */
+.social-icons {
+   margin-top: 1rem;
+}
+.social-icons a {
+   color: #fff;
+   margin: 0 0.5rem;
+   font-size: 1.5rem;
+}
+
+
+/* APRESENTAÇÃO */
+section {
+   padding: 2rem 1rem;
+   text-align: center;
+}
+/* Estilo para a section de apresentação */
+.presentation {
+   padding: 20px;
+}
+h2 {
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+}
+.presentation img {
+   width: 100%;
+   height: auto;
+   max-width: 100%;
+   display: block;
+   margin: 0 auto; 
+   border-radius: 10px; 
+}
+h3 {
+   font-size: 1.3rem;
+   margin-bottom: 0.5rem;
+}
+p {
+   font-size: 1rem;
+}
+
+
+/* FOTOS */
+.gallery .grid-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.gallery .grid-item img {
+   width: 100%;
+   height: auto;
+   border-radius: 5px;
+}
+
+
+/* VIDEOS */
+.video-container {
+   display: grid;
+   gap: 0.5rem;
+}
+.video-container .video-item video {
+   width: 100%;
+   height: auto;
+   border-radius: 5px;
+}
+
+
+/* VENDAS */
+.sales .card-container {
+   display: grid;
+   gap: 1rem;
+}
+.sales .card {
+   background: #f4f4f4;
+   padding: 1rem;
+   border-radius: 5px;
+   text-align: center;
+}
+.sales .card button {
+   margin-top: 1rem;
+   padding: 0.5rem 1rem;
+   background: #ff4747;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 1rem;
+}
+/* MODEL - pagamentos */
+.modal {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+.modal-content {
+   background: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   width: 80%;
+   max-width: 400px;
+   position: relative;
+}
+.close {
+   font-size: 1.5rem;
+   background-color: transparent;
+   border: none;
+   color: #333;
+   cursor: pointer;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+.close:hover {
+   color: #ff4747;
+}
+.modal-content img {
+   width: 100%;
+   max-width: 300px;
+   margin-bottom: 15px;
+}
+#qrCodeImg {
+   width: 100%;
+   max-width: 200px;
+   margin: 10px auto;
+   display: block;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+}
+.pix-key {
+   font-size: 1rem; 
+   font-weight: bold;
+   background-color: #e8e8e89c;
+   padding: 10px;
+   border-radius: 4px;
+   margin: 10px 0;
+   word-break: break-all;
+}
+.copy-button {
+   padding: 10px 20px;
+   font-size: 1rem;
+   background-color: #ff4747;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.copy-button:hover {
+   background-color: #ff4747;
+}
+.alerta-copia {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 0.9rem;
+   font-weight: bold;
+   margin-top: 10px;
+   color: #28a745;
+   border-radius: 2px;
+   background-color: #7fb58b92;
+   text-align: center;
+}
+
+
+/* CONTATO */
+.contact hr {
+   width: 200px;
+   height: 2px;
+   background-color: #ff4747;
+   margin: 30px auto 50px;
+   border: none;
+}
+.contact form {
+   display: grid;
+   gap: 1rem;
+   margin-top: 1rem;
+}
+.contact form input,
+.contact form button {
+   padding: 0.8rem;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+section.contact input{
+   border: 1px solid #ff4747;
+}
+section.contact input:focus {
+   border-color: #ff4747;
+   color: #ff4747;
+   outline: none;
+   font-weight: bold;
+}
+.contact form button {
+   background: #ff4747;
+   color: #fff;
+   cursor: pointer;
+}
+
+
+/* FOOTER */
+footer {
+   background: #333;
+   color: #fff;
+   text-align: center;
+   padding: 1rem;
+   font-size: 0.9rem;
+   position: relative;
+}
